@@ -1,0 +1,31 @@
+.slider {
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    width: 40px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    width: 28px;
+    height: 28px;
+    left: -4px;
+    top: -4px;
+    background-color: gray;
+    transition: all .5s;
+    border-radius: 50%;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+
+input[type=checkbox]:checked+.slider:before {
+    transform: translateX(20px);
+    background-color: blue;
+}
