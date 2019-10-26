@@ -1,25 +1,21 @@
 body {
     background-color: #111;
+    margin: 0;
 }
 
 .container {
     display: flex;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
     flex-direction: column;
-}
-
-#settingsPanel {
-    margin: auto;
 }
 
 #board {
     background-color: #111;
-    max-width: 500px;
     display: flex;
     flex-wrap: wrap;
-    width: 50%;
-    height: 50%;
+    overflow: hidden;
     margin: auto;
 }
 
@@ -28,9 +24,4 @@ body {
     height: 16px;
     margin: 2px;
     background-color: #333;
-    transition: all 2s;
-}
-
-.square:hover {
-    transition: all 0s;
 }

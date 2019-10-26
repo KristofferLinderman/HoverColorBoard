@@ -1,0 +1,66 @@
+.fab {
+    position: fixed;
+    display: flex;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 5px 5px #000;
+    opacity: 0.5;
+}
+
+.fab:hover {
+    box-shadow: 0 0 5px 5px #999;
+    opacity: 1;
+}
+
+.fab>.fas {
+    margin: auto;
+    font-size: 2em;
+}
+
+#menu {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 15px 5px;
+    margin: auto;
+    bottom: 75px;
+    right: 75px;
+    transition-duration: 500ms;
+    opacity: 0;
+}
+
+#menu>* {
+    opacity: 0;
+}
+
+.openMenu {
+    width: 300px;
+    height: 200px;
+    transition: all 1s ease-in-out;
+}
+
+.openMenu>* {
+    opacity: 1 !important;
+}
+
+.closeMenu {
+    width: 0;
+    height: 0;
+}
+
+.settingItem {
+    display: flex;
+    padding: 10px;
+}
+
+.inputTitles {
+    color: #000;
+    margin-right: 10px;
+}

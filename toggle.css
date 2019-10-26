@@ -4,8 +4,9 @@
     cursor: pointer;
     width: 40px;
     height: 20px;
-    background-color: #fff;
+    background-color: #aaa;
     border-radius: 10px;
+    transition-duration: 500ms;
 }
 
 .slider:before {
@@ -15,8 +16,8 @@
     height: 28px;
     left: -4px;
     top: -4px;
-    background-color: gray;
-    transition: all .5s;
+    background-color: #999;
+    transition-duration: 250ms;
     border-radius: 50%;
 }
 
@@ -24,8 +25,11 @@ input[type=checkbox] {
     display: none;
 }
 
+input[type=checkbox]:checked+.slider {
+    background-color: #333;
+}
 
 input[type=checkbox]:checked+.slider:before {
     transform: translateX(20px);
-    background-color: blue;
+    background-color: rgb(17, 17, 248);
 }

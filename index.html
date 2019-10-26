@@ -6,22 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Color Hover Board</title>
+    <script src="https://kit.fontawesome.com/247e8f606b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="toggle.css">
-
+    <link rel="stylesheet" href="menu.css">
 </head>
 
 <body>
     <div class="container">
-        <div id="settingsPanel">
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
-        </div>
+
         <div id="board"></div>
+        <div class="fab" id="settingsBtn">
+            <i class="fas fa-cogs"></i>
+        </div>
+        <div id="menu">
+            <div class="settingItem">
+                <label class="inputTitles" for="useColorSwitch">Use color</label>
+                <label class="switch">
+                    <input type="checkbox" id="useColorSwitch">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="settingItem">
+                <label class="inputTitles" for="fadeDurationInputl">Fade duration:
+                    <span id="fadeDurationText"> 2.0s</span>
+                </label>
+                <input type="range" name="fadeDurationContol" id="fadeDurationInput" step="0.5" min="0" max="10.0"
+                    value="2">
+            </div>
+        </div>
     </div>
     <script src="main.js"></script>
+    <script src="fab.js"></script>
 </body>
 
 </html>

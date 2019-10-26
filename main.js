@@ -1,10 +1,36 @@
 const board = document.getElementById('board');
-const squaresCount = 500;
-const defaultColor = '#333';
-let squares = [];
+const colorSwitch = document.getElementById('useColorSwitch');
+const fadeDurationSlider = document.getElementById('fadeDurationInput');
+const fadeDurationText = document.getElementById('fadeDurationText');
+
+const squaresCount = 5000;
+
+const defaultInactiveSquareColor = '#333';
+const defaultFadeDuration = 2;
+
+let useColor = false;
+let fadeDuration = defaultFadeDuration;
+
+let colorArray = ['#e74c3c', '#8e44ad', '#3498db', '#e67e22', '#2ecc71'];
 
 window.onload = () => {
     setUpBoard();
+    setUpColorSwitch();
+    setUpDurationSlider();
+}
+
+function setUpColorSwitch() {
+    colorSwitch.addEventListener('change', (event) => {
+        useColor = event.target.checked;
+    })
+}
+
+function setUpDurationSlider() {
+    fadeDurationSlider.addEventListener('input', (event) => {
+        fadeDuration = event.target.value;
+        // fadeDurationText.innerText = fadeDuration;
+        fadeDurationText.innerText = fadeDuration % 1 === 0 ? fadeDuration + ".0s" : fadeDuration + "s";
+    })
 }
 
 function setUpBoard() {
@@ -24,15 +50,22 @@ function setUpBoard() {
 }
 
 function getColor() {
-    return "fff";
+    if (!useColor) {
+        return "#fff";
+    }
+    let colorIndex = Math.floor(Math.random() * colorArray.length);
+    return colorArray[colorIndex];
+
 }
 
 function giveColor(element, color) {
-    element.style.backgroundColor = `#${color}`;
-    element.style.boxShadow = `0 0 3px 1px #${color}`;
+    element.style.backgroundColor = `${color}`;
+    element.style.boxShadow = `0 0 2px ${color}, 0 0 10px ${color}`;
+    element.style.transition = `all 0s`;
 }
 
 function removeColor(element) {
-    element.style.backgroundColor = defaultColor;
+    element.style.backgroundColor = defaultInactiveSquareColor;
+    element.style.transition = `all ${fadeDuration}s`;
     element.style.boxShadow = 'none';
 }
