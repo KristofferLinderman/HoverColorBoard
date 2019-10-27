@@ -4,7 +4,7 @@ const circleSwitch = document.getElementById('useCircleSwitch');
 const fadeDurationSlider = document.getElementById('fadeDurationInput');
 const fadeDurationText = document.getElementById('fadeDurationText');
 
-const squaresCount = 5000;
+const squaresCount = 4000;
 
 const defaultInactiveSquareColor = '#333';
 const defaultFadeDuration = 2;

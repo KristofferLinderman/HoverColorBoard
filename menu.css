@@ -9,7 +9,7 @@
     border-radius: 50%;
     z-index: 10;
     box-shadow: 0 0 5px 5px #000;
-    opacity: 0.5;
+    opacity: 0.9;
 }
 
 .fab:hover {
@@ -33,6 +33,7 @@
     bottom: 75px;
     right: 75px;
     transition-duration: 500ms;
+    overflow: hidden;
     opacity: 0;
 }
 
@@ -57,6 +58,7 @@
 
 .settingItem {
     display: flex;
+    justify-content: space-between;
     padding: 10px;
 }
 
